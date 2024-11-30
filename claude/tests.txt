@@ -1,0 +1,82 @@
+// Test 1: Déclarations simples et initialisations
+VAR_GLOBAL {
+    INTEGER Var1;
+    FLOAT Var2;
+    CHAR Var3;
+}
+DECLARATION {
+    CONST INTEGER Max = 100;
+    INTEGER Tab[10];
+}
+INSTRUCTION {
+    Var1 = 42;
+    Var2 = 3.14;
+    Var3 = 'A';
+    WRITE("Variables initialisées: ", Var1, Var2, Var3);
+}
+
+// Test 2: Expressions arithmétiques et conditions
+VAR_GLOBAL {
+    INTEGER Num1, Num2;
+    FLOAT Result;
+}
+DECLARATION {
+    INTEGER Temp;
+}
+INSTRUCTION {
+    Num1 = 10;
+    Num2 = 5;
+    Result = (Num1 + Num2) * 2;
+    
+    IF (Result > 25) {
+        WRITE("Résultat supérieur à 25");
+    } ELSE {
+        WRITE("Résultat inférieur ou égal à 25");
+    }
+}
+
+// Test 3: Boucle FOR et opérations
+VAR_GLOBAL {
+    INTEGER Counter, Sum;
+}
+DECLARATION {
+    CONST INTEGER Limit = 5;
+}
+INSTRUCTION {
+    Sum = 0;
+    FOR (Counter = 1; Counter <= Limit; Counter = Counter + 1) {
+        Sum = Sum + Counter;
+        WRITE("Itération: ", Counter, " Somme: ", Sum);
+    }
+}
+
+// Test 4: Test des erreurs
+VAR_GLOBAL {
+    INTEGER Value;
+}
+DECLARATION {
+    INTEGER value;  // Erreur: identificateur commence par minuscule
+    INTEGER VeryLongIdentifier;  // Erreur: identificateur > 8 caractères
+    INTEGER Value;  // Erreur: double déclaration
+}
+INSTRUCTION {
+    Undefined = 10;  // Erreur: variable non déclarée
+    Value = Value + 1;  // Erreur: utilisation avant initialisation
+}
+
+// Test 5: Expressions logiques complexes
+VAR_GLOBAL {
+    INTEGER A, B, C;
+}
+DECLARATION {
+    INTEGER Result;
+}
+INSTRUCTION {
+    A = 5;
+    B = 10;
+    C = 15;
+    
+    IF ((A < B && B < C) || !(A == C)) {
+        WRITE("Condition complexe vérifiée");
+    }
+}
