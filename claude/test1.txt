@@ -7,12 +7,10 @@ VAR_GLOBAL {
 DECLARATION {
     CONST INTEGER Max = 100;
     INTEGER Tab[10];
-
 }
 INSTRUCTION {
     Var1 = 42;
     Var2 = 3.14;
     Var3 = 'A';
-    Tab[3]==5;
     WRITE("Variables initialisées: ", Var1, Var2, Var3);
 }
