@@ -1,0 +1,23 @@
+VAR_GLOBAL {
+    INTEGER I, J, F;
+}
+DECLARATION {
+    INTEGER N;
+}
+INSTRUCTION {
+    %% Set a positive or negative number
+    N = 4;
+
+    %% Iterate over numbers to calculate factorials
+    FOR(I = 1 : 1 : N) {
+        F = 1;
+
+        %% Compute factorial using a nested loop
+        FOR(J = 1 : 1 : I) {
+            F = F * J;
+        }
+
+        %% Write the factorial
+        WRITE("Factorial of ", I, " is: ", F);
+    }
+}

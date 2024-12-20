@@ -1,0 +1,23 @@
+VAR_GLOBAL {
+    INTEGER I, J, R;
+}
+DECLARATION {
+    INTEGER B;
+}
+INSTRUCTION {
+    %% Set a signed base number
+    B = -3;
+
+    %% Generate a multiplication table for BaseNumber
+    FOR(I = 1 : 1 : 5) {
+        FOR(J = 1 : 1 : 5) {
+            R = B * I * J;
+
+            %% Apply a condition to adjust negative results
+            IF(R < 0) {
+                R = R + 1;  %% Add 1 to negative results
+            }
+            WRITE("Result: ", R, " (", I, " x ", J, ")");
+        }
+    }
+}

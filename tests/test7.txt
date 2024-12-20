@@ -1,0 +1,26 @@
+VAR_GLOBAL {
+    INTEGER A, B, C,K, D,Z;
+}
+DECLARATION {
+    INTEGER Result;
+    INTEGER Tab[3];
+    CHAR Tabb[2];
+    FLOAT Tabbb[4];
+    %%INTEGER A;
+    CHAR Az;
+}
+INSTRUCTION {
+    FOR(D=0: 4: 12){
+        FOR(A=0 : 1 : 3) {
+                B=A+1;
+                IF(A<3) {
+                    C=A+1;
+                }
+        }
+
+        Az='a';
+        FOR(K=0 : 2 : 5){
+            Tab[K]=3;
+        }
+    }
+}
