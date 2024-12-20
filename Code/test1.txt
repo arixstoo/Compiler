@@ -1,0 +1,34 @@
+VAR_GLOBAL {
+    INTEGER I, J, P, N, R;
+}
+DECLARATION {
+    INTEGER C;
+    CHAR C;
+    
+}
+INSTRUCTION {
+    %% Set a signed constant
+    C = -2;
+
+    %% Initialize counters
+    P = 0;
+    N = 0;
+
+    %% Nested loops with calculations
+    FOR(I = 1 : 1 : 4) {
+        FOR(J = 1 : 1 : 3) {
+            R = I * J * C;
+
+            %% Count positive and negative results
+            IF(R > 0) {
+                P = P + 1;
+            } ELSE {
+                N = N + 1;
+            }
+        }
+    }
+
+    %% Write the counts
+    WRITE("Positive Results: ", P);
+    WRITE("Negative Results: ", N);
+}
